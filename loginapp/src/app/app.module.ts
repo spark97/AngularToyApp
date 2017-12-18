@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import {HttpModule} from '@angular/http';
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
-
+import {LoginService} from './login.service' ;
 
 import { AppComponent } from './app.component';
 
@@ -17,7 +17,7 @@ import { AppComponent } from './app.component';
     HttpModule,
     RouterModule
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

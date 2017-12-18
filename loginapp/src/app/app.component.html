@@ -4,10 +4,12 @@
     Welcome to {{title}}!
   </h1> 
   <form name="form" #form="ngForm" (ngSubmit)="authenticate(form)">
-    <input type="text" name="username" placeholder="Enter username" ngModel>
+    <input type="text" name="username" placeholder="Enter username" [(ngModel)]="name">
+    You entered {{name}}
     <br>
-    <input type="password" name="password" placeholder="Enter password" ngModel>
-    <button type="submit">Submit</button>
+    <input type="password" name="password" placeholder="Enter password" [(ngModel)]="password">
+    You entered {{password}}
+    <button type="submit">Submit Details</button>
   </form>
 </div>
 
