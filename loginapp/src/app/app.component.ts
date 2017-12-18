@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import  {User} from './_models/user' ;
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import  {User} from './_models/user' ;
 })
 export class AppComponent {
   title : string = 'MyApp';
-  user : any = {
-    
-  } ;
+  authenticate(form: NgForm){
+    console.log(form.value)
+  }
 }
