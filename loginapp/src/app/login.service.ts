@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core' ;
 import {Http, Response} from '@angular/http' ;
+import {Observable} from 'rxjs/Rx' ;
 import 'rxjs/add/operator/map' ;
 
 @Injectable()
@@ -8,8 +9,12 @@ export class LoginService{
         private http:Http
     ){}
 
-    authenticate(name:String, password:String) {
-        return this.http.get('localhost/authenticate.php').map((res:Response) => res.json()) ;
+    body : string ;
+
+    authenticate(name:String, password:String):Observable<any>{
+        
+        this.body = "username="+name+"&password="+password;
+        return this.http.get('http://localhost/angular/login.php',this.body).map((res:Response) => res.json()) ;
     }
 }
 

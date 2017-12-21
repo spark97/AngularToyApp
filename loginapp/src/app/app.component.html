@@ -3,7 +3,7 @@
   <h1>
     Welcome to {{title}}!
   </h1> 
-  <form name="form" #form="ngForm" (ngSubmit)="authenticate(form)">
+  <form name="form" #form="ngForm" (ngSubmit)="auth(form)">
     <input type="text" name="username" placeholder="Enter username" [(ngModel)]="name">
     You entered {{name}}
     <br>

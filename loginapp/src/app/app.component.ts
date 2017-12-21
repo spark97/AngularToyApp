@@ -17,8 +17,12 @@ export class AppComponent {
   password = "12345";
   res : String ;
   details : any  ;
-  authenticate(form: NgForm){
+  response : string ;
+  auth(form: NgForm){
     this.details = form.value;
-    this.loginService.authenticate(form.value.name,form.value.password).subscribe(data=>this.res = data);
+    this.loginService.authenticate(form.value.name,form.value.password).subscribe(response => {
+      console.log(response);
+    });
+    //console.log("Res "+this.res );
   }
 }
